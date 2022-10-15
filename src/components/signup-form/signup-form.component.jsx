@@ -1,4 +1,4 @@
-import { async } from "@firebase/util"
+
 import { useState } from "react"
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase"
 import FromInput from "../form-input/form-input.component"
