@@ -4,6 +4,7 @@ import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "
 import FromInput from "../form-input/form-input.component"
 import './sign-up.style.scss'
 import Button from "../button/button.component"
+
 const defaultFormFields = {
     displayName: '',
     email: '',
@@ -11,11 +12,13 @@ const defaultFormFields = {
     confirmPassword: ''
 }
 
-const SignUpForm = () => {
 
+
+const SignUpForm = () => {
+    console.log('hit')
     const [formField, setFormField] = useState(defaultFormFields)
     const {displayName, email, password, confirmPassword} = formField
-    console.log(formField);
+   
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -26,6 +29,7 @@ const SignUpForm = () => {
         try {
             const {user} = await createAuthUserWithEmailAndPassword(email,password)
             await createUserDocumentFromAuth(user, {displayName})
+           
             clearFields();
         } catch(error) {
             if(error.code === 'auth/email-already-in-use') {
