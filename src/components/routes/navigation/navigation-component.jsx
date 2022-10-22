@@ -5,11 +5,11 @@ import { UserContext } from "../../../contexts/user.contexts";
 import {signOutUser} from "../../../utils/firebase/firebase.js"
 import './navigation.style.scss'
 import CartIcon from "../../cart-icon/cart-icon.component.jsx";
-
+import CartDropdown from "../../cart-dropdown/cart-dropdown.component";
+import {DropdownContext} from '../../../contexts/cart-dropdown.context'
 const Navigation = () => {
     const {currentUser} = useContext(UserContext)
-
-  
+    const {currentDropdown} = useContext(DropdownContext)
     
     return(
       <Fragment>
@@ -33,8 +33,13 @@ const Navigation = () => {
             
               )
             }
-           <CartIcon/>
+           <CartIcon />
           </div>
+
+          { currentDropdown && <CartDropdown/>
+         
+          }
+          
         </div>
         <Outlet />
       </Fragment> 
