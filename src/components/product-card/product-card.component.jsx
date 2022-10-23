@@ -1,11 +1,20 @@
-
+import { useContext } from 'react';
 import Button from '../button/button.component';
+import { DropdownContext } from '../../contexts/cart-dropdown.context';
 import './product-card.style.scss'
 
 
 const ProductCard = ({product}) => {
 
     const {name,price,imageUrl} = product
+    const {addItemToCart,sumCartQuantity,cartItems,totalQuantity} = useContext(DropdownContext) 
+    const addProductToCart = () => {
+        addItemToCart(product)
+    }
+    const summingQuantity = () => {
+        sumCartQuantity(cartItems,totalQuantity)
+    }
+    
     return(
         <div className='product-card-container'>
             <img alt={`${name}`} src={imageUrl}/>
@@ -13,7 +22,7 @@ const ProductCard = ({product}) => {
                 <span className='name'>{name}</span>
                 <span className='price'>{price}</span>
             </div>
-            <Button buttonType='inverted'>Add to card</Button>
+            <Button buttonType='inverted' onClick={addProductToCart}>Add to card</Button>
         </div>
 
 
