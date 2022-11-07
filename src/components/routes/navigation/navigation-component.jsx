@@ -3,7 +3,7 @@ import { Fragment, useContext } from "react";
 import { ReactComponent as CrownLogo} from '../../../assets/crown.svg'
 import { UserContext } from "../../../contexts/user.contexts";
 import {signOutUser} from "../../../utils/firebase/firebase.js"
-import './navigation.style.scss'
+import {NavigationContainer} from './navigation.style.jsx'
 import CartIcon from "../../cart-icon/cart-icon.component.jsx";
 import CartDropdown from "../../cart-dropdown/cart-dropdown.component";
 import {DropdownContext} from '../../../contexts/cart-dropdown.context'
@@ -13,8 +13,8 @@ const Navigation = () => {
     
     return(
       <Fragment>
-        <div className="navigation">
-          <Link className="logo-container" to='/'>
+        <NavigationContainer>
+          {/* <Link className="logo-container" to='/'>
           <CrownLogo className="logo"/>
           </Link>
           <div className="nav-links-container">
@@ -38,9 +38,9 @@ const Navigation = () => {
 
           { currentDropdown && <CartDropdown/>
          
-          }
+          } */}
           
-        </div>
+        </NavigationContainer>
         <Outlet />
       </Fragment> 
     )
