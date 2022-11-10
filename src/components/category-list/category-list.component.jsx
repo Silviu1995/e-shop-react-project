@@ -1,8 +1,9 @@
 import DirectoryItem from "../directory-item/directory-item.component";
-import "./categories-container.style.scss"
+import "./categories-container.style.jsx"
+import { CategoriesContainer } from "./categories-container.style.jsx";
 const CategoryList = ({category}) => {
     return( 
-    <div className="categories-container">
+    <CategoriesContainer>
     {
     category.map((category)=>  (
     <DirectoryItem key={category.id} category={category} />
@@ -10,7 +11,7 @@ const CategoryList = ({category}) => {
    
   ))}
 
-    </div> 
+    </CategoriesContainer> 
     )
 }
 export default CategoryList;
