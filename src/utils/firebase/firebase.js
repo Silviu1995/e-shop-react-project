@@ -52,7 +52,7 @@ const firebaseConfig = {
       batch.set(docRef, object)
     }) 
     await batch.commit();
-    console.log('done')
+   
   }
 
   export const getCategoriesAndDocument = async ()=>{

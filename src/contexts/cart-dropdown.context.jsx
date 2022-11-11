@@ -80,7 +80,7 @@ export const DropdownProvider = ({children}) => {
         RemoveItemFromCheckout,
         cartTotal
     }
-    console.log(value)
+    
 
 
     return <DropdownContext.Provider value={value} > {children} </DropdownContext.Provider>
