@@ -24,7 +24,7 @@ const Directory = ({category}) => {
     {
       "id": 4,
       "title": "womens",
-      "imageUrl": "https://www.frasersexperience.com/images/estore_blog_fashionculottes-01.jpg",
+      "imageUrl": "https://i.ibb.co/GCCdy8t/womens.png",
       "route":"shop/womens"
     },
     {
