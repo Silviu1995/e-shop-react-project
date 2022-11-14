@@ -3,10 +3,10 @@ import { DropdownContext } from '../../contexts/cart-dropdown.context';
 import { useContext } from 'react';
 import { Arrow, BaseSpan, CheckoutItemContainer, ImageContainer, Quantity, RemoveButton,Value } from './checkout-item.style.jsx';
 const CheckoutItem = ({cartItem}) => {
-    const {RemoveItemFromCheckout, addItemToCart, DeleteItemFromCart} = useContext(DropdownContext)
+    const {removeItemToCart, addItemToCart, clearItemFromCart} = useContext(DropdownContext)
     const {name, imageUrl, price, quantity} = cartItem;
     const addItemHandler = () => addItemToCart(cartItem)
-    const deleteItemHandler = () => DeleteItemFromCart(cartItem)
+    const deleteItemHandler = () => removeItemToCart(cartItem)
     return(
         <CheckoutItemContainer>
             <ImageContainer>
@@ -19,7 +19,7 @@ const CheckoutItem = ({cartItem}) => {
                 <Arrow onClick={addItemHandler}>&#10095;</Arrow>
                 </Quantity>
             <BaseSpan>{price} $</BaseSpan>
-            <RemoveButton onClick={()=>RemoveItemFromCheckout(cartItem)} >&#10005;</RemoveButton>
+            <RemoveButton onClick={()=>clearItemFromCart(cartItem)} >&#10005;</RemoveButton>
         </CheckoutItemContainer>
     )
 }

@@ -4,14 +4,14 @@ import { DropdownContext } from '../../contexts/cart-dropdown.context'
 import { useContext } from 'react'
 import { CartIconContainer, ItemCount } from './cart-icon.style'
 const CartIcon = () => {
-    const {currentDropdown,setCurrentDropdown, totalQuantity} = useContext(DropdownContext)
+    const {isCartOpen,setIsCartOpen, cartCount} = useContext(DropdownContext)
     const dropdownHandler = (event) => {
-        setCurrentDropdown(!currentDropdown)
+        setIsCartOpen(!isCartOpen)
     }
     return(
         <CartIconContainer onClick={dropdownHandler}>
             <ShoppingIcon className='shopping-icon'/>
-            <ItemCount>{totalQuantity}</ItemCount>
+            <ItemCount>{cartCount}</ItemCount>
         </CartIconContainer>
     )
 }
