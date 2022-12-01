@@ -1,10 +1,10 @@
 import { createSelector } from "reselect"
 
-const selectCategoriyReducer = (state) =>  state.categories
+const selectCategoryReducer = (state) =>  state.categories
 
 
 export const selectCategories = createSelector(
-  [selectCategoriyReducer],
+  [selectCategoryReducer],
   (categoriesSlice) => categoriesSlice.categories
   
 )
@@ -17,4 +17,9 @@ export const selectCategoriesMap = createSelector(
     acc[title.toLowerCase()] = items
     return acc
   },{})
+)
+
+export const selectCategoriesIsLoading = createSelector(
+  [selectCategoryReducer],
+  (categoriesSlice) => categoriesSlice.isLoading
 )
