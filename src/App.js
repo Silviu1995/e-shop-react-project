@@ -5,22 +5,17 @@ import Navigation from "./components/routes/navigation/navigation-component.jsx"
 import Authentification from "./components/routes/Authentification/Authentification.component";
 import Shop from "./components/routes/shop/shop.component";
 import CheckOut from "./components/routes/check-out/check-out.component";
-import { onAuthStateChangedListener,createUserDocumentFromAuth } from "./utils/firebase/firebase";
+
 import { useEffect } from "react";
-import { setCurrentUser } from "./store/user/user.action";
+
 import { useDispatch } from "react-redux";
+import { checkUserSession } from "./store/user/user.action";
 const App = () => {
-  const dispatch = useDispatch()
-  useEffect(()=> {
-    const unsubscribe = onAuthStateChangedListener((user)=>{
-        if(user) {
-            createUserDocumentFromAuth(user)
-        }
-        dispatch(setCurrentUser(user));
-        
-    });
-    return unsubscribe;
-    },[dispatch]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUserSession());
+  }, [dispatch]);
 
   return (
   <Routes>
