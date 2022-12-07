@@ -10,7 +10,7 @@ import {
   Footer,
   Name,
   Price,
-} from './product-card.style';
+} from './product-card.styles';
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
