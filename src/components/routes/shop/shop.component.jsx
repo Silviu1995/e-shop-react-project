@@ -11,7 +11,7 @@ const Shop = () => {
     const dispatch = useDispatch()
     useEffect(()=>{
        dispatch(fetchCategoriesStart())
-    },[dispatch])
+    },[dispatch])// eslint-disable-next-line
    
     return(
        <Routes>
