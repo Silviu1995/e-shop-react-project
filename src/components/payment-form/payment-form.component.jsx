@@ -39,7 +39,7 @@ const PaymentForm = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser ? currentUser.displayName : 'Yihua Zhang',
+          name: currentUser ? currentUser.displayName : 'Boke',
         },
       },
     });
@@ -47,10 +47,10 @@ const PaymentForm = () => {
     setIsProcessingPayment(false);
 
     if (paymentResult.error) {
-      alert(paymentResult.error.message);
+      alert("Payment Denied !!");
     } else {
       if (paymentResult.paymentIntent.status === 'succeeded') {
-        alert('Payment Successful!');
+        alert('Payment Successful !!');
       }
     }
   };
