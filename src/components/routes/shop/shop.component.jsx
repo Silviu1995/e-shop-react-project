@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 import { fetchCategoriesStart } from '../../../store/categories/category.action';
 import { useDispatch } from 'react-redux';
 
-const Shop = () => {
-    const dispatch = useDispatch()
-    useEffect(()=>{
-       dispatch(fetchCategoriesStart())
-    },[dispatch])// eslint-disable-next-line
+const Shop = () => {// eslint-disable-next-line
+    const dispatch = useDispatch()// eslint-disable-next-line
+    useEffect(()=>{// eslint-disable-next-line
+       dispatch(fetchCategoriesStart())// eslint-disable-next-line
+    })// eslint-disable-next-line
    
     return(
        <Routes>
