@@ -9,5 +9,6 @@ margin: 30px auto;
     display: flex;
     flex-direction: column;
     gap: 50px;
+    width: 100%;
   }
 `
