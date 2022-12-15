@@ -18,6 +18,5 @@ export const ButtonsContainer = styled.div`
   @media screen and (max-width: 800px) {
     display: grid;
     gap: 10px;
-    justify-content: center;
   }
 `;
