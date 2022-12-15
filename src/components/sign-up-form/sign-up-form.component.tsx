@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
-import { SignUpContainer } from "./sign-up-form.styles";
+import { ButtonContainer, SignUpContainer } from "./sign-up-form.styles";
 import { signUpStart } from "../../store/user/user.action";
 import { AuthError, AuthErrorCodes } from "firebase/auth";
 
@@ -90,7 +90,8 @@ const SignUpForm = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-        <Button type="submit">Sign Up</Button>
+        <ButtonContainer><Button type="submit">Sign Up</Button></ButtonContainer>
+        
       </form>
     </SignUpContainer>
   );

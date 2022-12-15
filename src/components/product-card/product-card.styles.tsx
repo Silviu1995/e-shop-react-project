@@ -26,7 +26,6 @@ export const ProductCartContainer = styled.div`
       opacity: 0.6;
       min-width: unset;
       padding: 0 20px;
-      margin-bottom: 100px;
     }
   }
 
