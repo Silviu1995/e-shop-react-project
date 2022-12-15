@@ -10,9 +10,3 @@ export const SignUpContainer = styled.div`
   }
 
 `;
-export const ButtonContainer = styled.div`
-  @media screen and (max-width: 800px) {
-    display: grid;
-    justify-content: center;
-  }
-`;

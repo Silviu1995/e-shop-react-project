@@ -8,6 +8,6 @@ margin: 30px auto;
 @media screen and (max-width: 800px) {
     display: grid;
     gap: 50px;
-    width: 90vw;
+    width: 100vw;
   }
 `
