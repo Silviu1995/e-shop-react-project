@@ -6,8 +6,8 @@ justify-content: space-between;
 width: 900px;
 margin: 30px auto;
 @media screen and (max-width: 800px) {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 50px;
-    width: 100%;
   }
 `
